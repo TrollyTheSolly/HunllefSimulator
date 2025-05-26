@@ -1,0 +1,235 @@
+/* General Body and Container Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #1a1a1a; /* Dark gray background */
+    color: #e0e0e0; /* Light gray text for contrast */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #2c2c2c; /* Medium-dark gray for container */
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Darker shadow */
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #444; /* Darker separator line */
+    padding-bottom: 20px;
+}
+
+header h1 {
+    color: #f5f5dc; /* Beige for main heading */
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #b0b0b0; /* Lighter gray for paragraph text */
+}
+
+/* Info Box Styling */
+.info-box {
+    background-color: #333; /* Darker than container, but lighter than input groups */
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.info-box h2 {
+    color: #f5f5dc; /* Beige for section headings */
+    margin-top: 0; /* Remove top margin for h2 inside info-box */
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(245, 245, 220, 0.2); /* More subtle underline */
+}
+
+.info-box p {
+    color: #c0c0c0;
+    margin-bottom: 15px;
+}
+
+.info-box ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
+    color: #c0c0c0;
+}
+
+.info-box ul li {
+    margin-bottom: 8px;
+}
+
+.info-box ul li strong {
+    color: #dcdcc6; /* Slightly lighter beige for emphasis */
+}
+
+
+/* Section Styling */
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #f5f5dc; /* Beige for section headings */
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgba(245, 245, 220, 0.3); /* Subtle beige underline */
+}
+
+/* Input Grid and Group Styling */
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.prayer-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.input-group {
+    padding: 15px;
+    border: 1px solid #444; /* Darker border */
+    border-radius: 6px;
+    background-color: #333; /* Dark gray for input groups */
+    transition: box-shadow 0.3s ease;
+}
+
+.input-group:focus-within {
+    box-shadow: 0 0 0 2px rgba(245, 245, 220, 0.6); /* Beige highlight */
+    border-color: rgba(245, 245, 220, 0.8);
+}
+
+.global-config {
+    max-width: 300px;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #c0c0c0; /* Light gray for labels */
+    font-size: 0.95em;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #555; /* Darker border for inputs */
+    box-sizing: border-box;
+    background-color: #444; /* Dark gray for input background */
+    color: #e0e0e0; /* Light gray text in inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus,
+select:focus {
+    border-color: #f5f5dc; /* Beige border on focus */
+    box-shadow: 0 0 5px rgba(245, 245, 220, 0.25); /* Beige shadow */
+    outline: none;
+}
+
+/* Button Styling */
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+button {
+    background-color: #f5f5dc; /* Beige button background */
+    color: #1a1a1a; /* Dark text on beige button */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #dcdcc6; /* Lighter beige on hover */
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0px);
+}
+
+/* Loader Styling */
+.loader {
+    border: 4px solid #555; /* Darker loader track */
+    border-top: 4px solid #f5f5dc; /* Beige loader spinner */
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Results Section Styling */
+.results-section h2 {
+    margin-top: 30px;
+}
+
+#results {
+    margin-top: 15px;
+    padding: 20px;
+    background-color: #222; /* Very dark gray for results background */
+    border: 1px solid #444; /* Darker border for results */
+    border-radius: 6px;
+    white-space: pre-wrap;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.95em;
+    min-height: 100px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+    color: #d0d0d0; /* Light gray text for results */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

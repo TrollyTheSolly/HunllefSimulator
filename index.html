@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunllef Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Corrupted Hunllef Simulator ⚔️</h1>
+            <p>Configure the simulation parameters below and click the button to run.</p>
+        </header>
+
+        <section class="info-box">
+            <h2>How to Use This Simulator:</h2>
+            <p>
+                This tool simulates combat encounters with the Corrupted Hunllef. Adjust the player's stats, gear, prayer levels, and the number of simulations to run.
+                The results will provide insights into average fight duration, damage taken, and success rates based on your configuration. Max hits for Ranged and Magic are now automatically calculated based on your levels and selected offensive prayers.
+            </p>
+            <ul>
+                <li><strong>Number of Iterations:</strong> Set how many fights the simulation should run. More iterations give more reliable averages.</li>
+                <li><strong>Player Configuration:</strong> Input your character's combat levels, armor tier, and starting food.</li>
+                <li><strong>Player Offensive Prayers:</strong> Select the offensive prayers your player will use for Ranged and Magic. These will be used to calculate your max hits.</li>
+                <li>Click "Run Simulation" to start. The results will appear below.</li>
+            </ul>
+        </section>
+
+        <section class="simulation-config">
+            <div class="input-group global-config">
+                <label for="iterations">Number of Iterations:</label>
+                <input type="number" id="iterations" name="iterations" value="10" min="1">
+            </div>
+        </section>
+
+        <section class="player-config">
+            <h2>Player Configuration:</h2>
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="player_mage_lvl">Mage Level:</label>
+                    <input type="number" id="player_mage_lvl" name="player_mage_lvl" value="99">
+                </div>
+                <div class="input-group">
+                    <label for="player_range_lvl">Range Level:</label>
+                    <input type="number" id="player_range_lvl" name="player_range_lvl" value="99">
+                </div>
+                <div class="input-group">
+                    <label for="player_hp">HP Level:</label>
+                    <input type="number" id="player_hp" name="player_hp" value="99">
+                </div>
+                <div class="input-group">
+                    <label for="player_defence_lvl">Defence Level:</label>
+                    <input type="number" id="player_defence_lvl" name="player_defence_lvl" value="99">
+                </div>
+                <div class="input-group">
+                    <label for="player_tick_efficiency">Tick Waste (%):</label>
+                    <input type="number" id="player_tick_efficiency" name="player_tick_efficiency" value="0" step="0.01" min="0.0">
+                </div>
+                <div class="input-group">
+                    <label for="player_armor_tier">Armor Tier (1-3):</label>
+                    <select id="player_armor_tier" name="player_armor_tier">
+                        <option value="1" selected>Tier 1</option>
+                        <option value="2">Tier 2</option>
+                        <option value="3">Tier 3</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="player_starting_food">Starting Food:</label>
+                    <input type="number" id="player_starting_food" name="player_starting_food" value="18">
+                </div>
+            </div>
+        </section>
+
+        <section class="player-prayers">
+            <h2>Player Offensive Prayers:</h2>
+            <div class="input-grid prayer-grid">
+                <div class="input-group">
+                    <label for="player_range_prayer">Ranged Prayer:</label>
+                    <select id="player_range_prayer" name="player_range_prayer">
+                        <option value="RIGOUR" selected>Rigour</option>
+                        <option value="EAGLEEYE">Eagle Eye</option>
+                        <option value="HAWKEYE">Hawk Eye</option>
+                        <option value="SHARPEYE">Sharp Eye</option>
+                        <option value="DEADEYE">Deadeye</option>
+                        <option value="NONE">None</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="player_mage_prayer">Mage Prayer:</label>
+                    <select id="player_mage_prayer" name="player_mage_prayer">
+                        <option value="AUGURY" selected>Augury</option>
+                        <option value="MYSTICMIGHT">Mystic Might</option>
+                        <option value="MYSTICLORE">Mystic Lore</option>
+                        <option value="MYSTICWILL">Mystic Will</option>
+                        <option value="MYSTICVIGOUR">Mystic Vigour</option>
+                        <option value="NONE">None</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="controls">
+            <button id="runButton">Run Simulation</button>
+            <div class="loader" id="loader"></div>
+        </section>
+
+        <section class="results-section">
+            <h2>Results:</h2>
+            <pre id="results">Simulation results will appear here...</pre>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
