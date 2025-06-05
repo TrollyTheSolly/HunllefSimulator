@@ -110,8 +110,8 @@ class Player {
         this._tick_efficiency = 0.4; 
         this.damage_taken = 0;
 
-        this._range_attack_cooldown = 4;
-        this._mage_attack_cooldown = 4;
+        this._range_attack_cooldown = 3;
+        this._mage_attack_cooldown = 3;
         this._ticks_since_attack = 4;
         
         this._remaining_food = starting_food;
@@ -194,7 +194,7 @@ class CorruptedHunllef {
         this._gear_mage_attack = 90;
         this._gear_range_attack = 90;
         this._ticks_since_attack = 5;
-        this._attack_cooldown = 5;
+        this._attack_cooldown = 4;
         this._attacks_fired = 0;
         this._attacks_taken = 0;
         this._current_prayer = "RANGE";
