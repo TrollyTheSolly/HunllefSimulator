@@ -3,6 +3,10 @@ class RandomRange {
         return Math.floor(Math.random() * (upper_inclusive + 1));
     }
 
+    random_player_damage(upper_inclusive){
+        return Math.floor(Math.random() * upper_inclusive) + 1;
+    }
+
     random_double() {
         return Math.random();
     }
@@ -375,12 +379,12 @@ class HunllefSimulatorLogic {
                 if (hunllef.get_current_prayer() === "MAGE") {
                     player.set_prayer(new Prayer(this.player_range_prayer_name));
                     if (this.combat_utils.check_player_range_hit(player, hunllef)) {
-                        hunllef.damage(this.random_range.random_int(player.get_range_max_hit()));
+                        hunllef.damage(this.random_range.random_player_damage(player.get_range_max_hit()));
                     }
                 } else { // Hunllef prayer is RANGE
                     player.set_prayer(new Prayer(this.player_mage_prayer_name));
                     if (this.combat_utils.check_player_mage_hit(player, hunllef)) {
-                        hunllef.damage(this.random_range.random_int(player.get_mage_max_hit()));
+                        hunllef.damage(this.random_range.random_player_damage(player.get_mage_max_hit()));
                     }
                 }
             } else {
