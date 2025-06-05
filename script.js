@@ -198,7 +198,7 @@ class CorruptedHunllef {
         this._gear_mage_attack = 90;
         this._gear_range_attack = 90;
         this._ticks_since_attack = 5;
-        this._attack_cooldown = 4;
+        this._attack_cooldown = 5;
         this._attacks_fired = 0;
         this._attacks_taken = 0;
         this._current_prayer = "RANGE";
