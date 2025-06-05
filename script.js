@@ -198,7 +198,7 @@ class CorruptedHunllef {
         this._gear_mage_attack = 90;
         this._gear_range_attack = 90;
         this._ticks_since_attack = 5;
-        this._attack_cooldown = 5;
+        this._attack_cooldown = 4;
         this._attacks_fired = 0;
         this._attacks_taken = 0;
         this._current_prayer = "RANGE";
@@ -372,7 +372,7 @@ class HunllefSimulatorLogic {
                 player.set_remaining_food(player.get_remaining_food() - 1);
                 player.heal(this.food_heal);
                 player.set_ticks_since_attack(player.get_ticks_since_attack() - 3); // Eating costs ticks
-            } else if (player.get_ticks_since_attack() >= 4) { // Assuming 4-tick weapons
+            } else if (player.get_ticks_since_attack() >= 3) { // Assuming 4-tick weapons
                 player.set_ticks_since_attack(0);
                 hunllef.set_attacks_taken(hunllef.get_attacks_taken() + 1);
 
