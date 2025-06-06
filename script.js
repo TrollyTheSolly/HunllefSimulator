@@ -369,6 +369,7 @@ class HunllefSimulatorLogic {
     player_tick(player, hunllef) {
         if (this.random_range.random_double() > player.get_tick_efficiency()) {
             if (this.should_eat(player) && this.has_food(player)) {
+                player.set_ticks_since_attack(player.get_ticks_since_attack+1); // Tick still reduces when eating
                 player.set_remaining_food(player.get_remaining_food() - 1);
                 player.heal(this.food_heal);
                 player.set_ticks_since_attack(player.get_ticks_since_attack() - 3); // Eating costs ticks
